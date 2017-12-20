@@ -1,0 +1,10 @@
+%{
+#include "y.tab.h"
+#include "std.lib"
+%}
+%%
+"(" return('<');
+")" return('>');
+"," return(',');
+[0-9]+ {yyval.a=atoi(yytext); return nim;}
+. printf("err");
