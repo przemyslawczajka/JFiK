@@ -1,0 +1,8 @@
+%union {int a;}
+%token<a> num
+%%
+S:'(' {printf("<");} A')'{printf(">");}
+	;
+A:A','num{printf(" %d", $3);}
+	|num {printf("%d",$1);}
+	;
